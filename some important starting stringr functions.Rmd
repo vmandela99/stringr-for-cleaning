@@ -1,0 +1,52 @@
+---
+title: "working with strings in R"
+author: "Victor Mandela"
+date: "3/2/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#Trim leading and trailing white space
+str_trim("      this is a test   ")
+
+#Pad String with zeros
+str_pad("24493", width = 7, side = "left", pad = "0")
+
+#create character vector of names
+friends <- c("Sarah", "Tom", "Alice")
+str_detect(friends, "Alice")
+
+#Replace string in vector
+str_replace(friends, "Alice", "David")
+
+```
+Exercise
+
+1. Load the stringr package.
+
+2. Trim all leading and trailing white space from the first set of strings.
+
+3. Pad the second set of strings with leading zeros such that all are 9 characters in length.
+
+```{r}
+# Copy of students2: students3
+students3 <- students2
+
+# Look at the head of students3
+head(students3)
+
+# Detect all dates of birth (dob) in 1997
+str_detect(students3$dob, "1997")
+
+# In the sex column, replace "F" with "Female" ...
+students3$sex <- str_replace(student$sex, "F", "Female")
+
+# ... and "M" with "Male"
+students3$sex <- str_replace(student$sex, "M", "Male")
+
+# View the head of students3
+head(students3)
+```
+
